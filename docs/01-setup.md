@@ -89,9 +89,21 @@ git version 2.56.0.windows.4
 - [x] .gitignore 작성
 - [x] 초기 README 작성
 - [x] 환경 확인 문서 작성
-- [ ] Git 저장소 초기화
-- [ ] 첫 커밋
-- [ ] GitHub 연결 및 첫 푸시
-- [ ] 환경 스크린샷 저장
+- [x] Git 저장소 초기화
+- [x] 첫 커밋
+- [x] GitHub 연결 및 첫 푸시
+- [x] 환경 스크린샷 저장
 
 미완료 항목은 실제 수행 후 기록한다.
+
+## Git 저장소와 첫 업로드 결과
+
+- git init -b main으로 저장소 초기화 완료
+- 첫 커밋: ee0c7bc
+- 커밋 메시지: Feat: 퀴즈 게임 프로젝트 초기 설정
+- 원격 주소: https://github.com/dongsoo-seol/quiz-game.git
+- git push -u origin main 실행 성공
+- GitHub 웹에서 초기 파일 표시 확인
+- Python 경로를 사용자 PATH에 저장한 뒤 현재 창에서 3.12.10 실행 확인
+- 환경 사진: docs/screenshots/environment.png
+- 사진의 Python 버전, 실행 성공, Git 버전, main 표시 확인

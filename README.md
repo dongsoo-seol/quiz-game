@@ -11,8 +11,8 @@
 - [x] Git 버전 확인
 - [x] 프로젝트 폴더 준비
 - [x] .gitignore 작성
-- [ ] Git 저장소 초기화
-- [ ] GitHub 연결과 첫 업로드
+- [x] Git 저장소 초기화
+- [x] GitHub 연결과 첫 업로드
 - [ ] 퀴즈 게임 구현
 
 ## 개발 환경
@@ -53,3 +53,12 @@ quiz-game/
 
 퀴즈와 최고 점수는 프로젝트 루트의 state.json에 UTF-8로 저장할 예정입니다.
 구현 후 실제 필드 구조와 데이터 유지 검증 결과를 기록합니다.
+## 1단계 실행 증거
+
+- 첫 커밋: ee0c7bc — 프로젝트 초기 설정
+- 원격 저장소: https://github.com/dongsoo-seol/quiz-game
+- 첫 푸시: main 브랜치 업로드 성공
+- GitHub 웹에서 초기 파일 표시 확인
+- 환경 사진 저장 및 내용 확인 완료
+
+![개발 환경 확인](docs/screenshots/environment.png)
