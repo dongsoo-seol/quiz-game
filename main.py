@@ -1,3 +1,6 @@
+from quiz_game import QuizGame
+
+
 def show_menu():
     print("\n=== 나의 퀴즈 게임 ===")
     print("1. 퀴즈 풀기")
@@ -29,23 +32,36 @@ def read_int(prompt, minimum, maximum):
 
 
 def main():
+    game = QuizGame()
     running = True
 
-    while running:
-        show_menu()
-        choice = read_int("선택: ", 1, 5)
+    try:
+        while running:
+            show_menu()
+            choice = read_int("선택: ", 1, 5)
 
-        if choice == 1:
-            print("퀴즈 풀기는 다음 단계에서 구현합니다.")
-        elif choice == 2:
-            print("퀴즈 추가는 다음 단계에서 구현합니다.")
-        elif choice == 3:
-            print("퀴즈 목록은 다음 단계에서 구현합니다.")
-        elif choice == 4:
-            print("점수 확인은 다음 단계에서 구현합니다.")
-        elif choice == 5:
-            print("게임을 종료합니다.")
-            running = False
+            if choice == 1:
+                correct_count = game.play_quizzes(read_int)
+
+                if correct_count is not None:
+                    game.update_best_score(correct_count)
+
+            elif choice == 2:
+                print("퀴즈 추가는 다음 단계에서 구현합니다.")
+
+            elif choice == 3:
+                print("퀴즈 목록은 다음 단계에서 구현합니다.")
+
+            elif choice == 4:
+                game.show_best_score()
+
+            elif choice == 5:
+                print("게임을 종료합니다.")
+                running = False
+
+    finally:
+        if not game.save_state():
+            print("종료 시 저장하지 못했습니다. 저장 오류를 확인해 주세요.")
 
 
 if __name__ == "__main__":
