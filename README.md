@@ -53,8 +53,8 @@ quiz-game/
 
 ## 데이터 파일 계획
 
-퀴즈와 최고 점수는 프로젝트 루트의 state.json에 UTF-8로 저장할 예정입니다.
-구현 후 실제 필드 구조와 데이터 유지 검증 결과를 기록합니다.
+퀴즈와 최고 점수는 프로젝트 루트의 state.json에 UTF-8로 저장하고 불러옵니다.
+quizzes는 문제 목록이며, best_score는 최고 정답 수입니다. 미플레이 상태는 null로 구분합니다. 저장과 복구 검증은 4단계 문서에 기록했습니다.
 ## 1단계 실행 증거
 
 - 첫 커밋: ee0c7bc — 프로젝트 초기 설정
@@ -92,3 +92,20 @@ quiz-game/
 [3단계 수행 기록](docs/03-quiz-data.md)
 
 ![기본 문제 검증](docs/screenshots/quiz-data.png)
+
+## 4단계 수행 결과
+
+- QuizGame 기본 구조와 JSON 저장 및 불러오기 구현
+- 프로젝트 루트의 state.json을 UTF-8로 관리
+- 파일 없음, 손상, 자료 오류, 읽기 및 쓰기 오류 처리 검증
+- 자동 검증 7개 통과 및 종료 코드 0 확인
+- 시험 문제와 점수의 재실행 후 유지 확인
+- 검증 후 기본 문제 5개와 미플레이 상태로 복원
+- 구현 및 검증 증거 커밋: 68958dd
+- 실제 게임 진행과 종료 시 저장 연결은 후속 구현
+
+[4단계 수행 기록](docs/04-state-storage.md)
+
+[자동 검증 로그](docs/04-storage-test-log.txt)
+
+![데이터 영속성 검증](docs/screenshots/state-persistence.png)
