@@ -1,0 +1,43 @@
+test_broken_json (test_storage.TestStorage.test_broken_json) ... ok
+test_empty_quizzes_and_zero_score (test_storage.TestStorage.test_empty_quizzes_and_zero_score) ... ok
+test_invalid_data (test_storage.TestStorage.test_invalid_data) ... ok
+test_missing_file (test_storage.TestStorage.test_missing_file) ... ok
+test_read_error (test_storage.TestStorage.test_read_error) ... ok
+test_save_and_reload (test_storage.TestStorage.test_save_and_reload) ... ok
+test_write_error (test_storage.TestStorage.test_write_error) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.062s
+
+OK
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장 자료를 불러오지 못했습니다: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장된 데이터를 불러왔습니다. 퀴즈 0개
+저장된 데이터를 불러왔습니다. 퀴즈 0개
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장 자료를 불러오지 못했습니다: 저장 자료는 딕셔너리 형태여야 합니다.
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장 자료를 불러오지 못했습니다: 'best_score'
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장 자료를 불러오지 못했습니다: 퀴즈 목록은 리스트여야 합니다.
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장 자료를 불러오지 못했습니다: 선택지는 4개를 담은 리스트여야 합니다.
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장 자료를 불러오지 못했습니다: 정답은 1~4 사이의 정수여야 합니다.
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장 자료를 불러오지 못했습니다: 최고 점수는 0 이상의 정수여야 합니다.
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장 자료를 불러오지 못했습니다: 최고 점수는 0 이상의 정수여야 합니다.
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장 파일이 없어 기본 퀴즈를 사용합니다.
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장 자료를 불러오지 못했습니다: [Errno 13] Permission denied: 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmprdu9itcu\\state.json'
+기본 퀴즈와 미플레이 상태로 복구합니다.
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+저장된 데이터를 불러왔습니다. 퀴즈 6개
+저장된 데이터를 불러왔습니다. 퀴즈 5개
+데이터를 저장하지 못했습니다: [Errno 2] No such file or directory: 'C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\tmp1veux_c0\\missing-directory\\state.json.tmp'
