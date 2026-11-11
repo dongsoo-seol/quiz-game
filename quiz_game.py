@@ -194,3 +194,16 @@ class QuizGame:
         print("퀴즈를 추가하고 파일에 저장했습니다.")
         print(f"등록된 퀴즈: {len(self.quizzes)}개")
         return True
+
+    def show_quiz_list(self):
+        if not self.quizzes:
+            print("등록된 퀴즈가 없습니다.")
+            return 0
+
+        total = len(self.quizzes)
+        print(f"\n등록된 퀴즈 목록: 총 {total}개")
+
+        for number, quiz in enumerate(self.quizzes, start=1):
+            print(f"[{number}] {quiz.question}")
+
+        return total

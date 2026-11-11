@@ -50,7 +50,7 @@ def main():
                 game.add_quiz(read_int)
 
             elif choice == 3:
-                print("퀴즈 목록은 다음 단계에서 구현합니다.")
+                game.show_quiz_list()
 
             elif choice == 4:
                 game.show_best_score()
