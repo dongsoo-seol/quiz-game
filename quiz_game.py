@@ -154,3 +154,43 @@ class QuizGame:
 
         self.show_best_score()
         return True
+
+    def read_nonempty_text(self, prompt):
+        while True:
+            text = input(prompt).strip()
+
+            if not text:
+                print("내용이 비어 있습니다. 다시 입력해 주세요.")
+                continue
+
+            return text
+
+
+    def add_quiz(self, read_number):
+        print("\n새로운 퀴즈를 추가합니다.")
+
+        question = self.read_nonempty_text("문제: ")
+        choices = []
+
+        for number in range(1, 5):
+            choice = self.read_nonempty_text(f"선택지 {number}: ")
+            choices.append(choice)
+
+        answer = read_number("정답 번호(1~4): ", 1, 4)
+
+        quiz = Quiz(
+            question=question,
+            choices=choices,
+            answer=answer,
+        )
+
+        self.quizzes.append(quiz)
+
+        if not self.save_state():
+            self.quizzes.pop()
+            print("저장에 실패해 새 문제 등록을 취소했습니다.")
+            return False
+
+        print("퀴즈를 추가하고 파일에 저장했습니다.")
+        print(f"등록된 퀴즈: {len(self.quizzes)}개")
+        return True
