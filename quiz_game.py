@@ -123,3 +123,34 @@ class QuizGame:
 
             print(f"\n결과: {total}문제 중 {correct_count}문제 정답!")
             return correct_count
+
+    def show_best_score(self):
+        if self.best_score is None:
+            print("아직 완료한 퀴즈 기록이 없습니다.")
+        else:
+            print(f"최고 점수: {self.best_score}개 정답")
+
+
+    def update_best_score(self, correct_count):
+        if type(correct_count) is not int or correct_count < 0:
+            raise ValueError("정답 수는 0 이상의 정수여야 합니다.")
+
+        is_new_record = (
+            self.best_score is None
+            or correct_count > self.best_score
+        )
+
+        if is_new_record:
+            self.best_score = correct_count
+
+        if not self.save_state():
+            print("점수는 메모리에 유지되지만 이번 파일 저장은 실패했습니다.")
+            return False
+
+        if is_new_record:
+            print("새로운 최고 점수를 저장했습니다!")
+        else:
+            print("기존 최고 점수를 유지했습니다.")
+
+        self.show_best_score()
+        return True
