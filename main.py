@@ -1,3 +1,6 @@
+from quiz_game import QuizGame
+
+
 def show_menu():
     print("\n=== 나의 퀴즈 게임 ===")
     print("1. 퀴즈 풀기")
@@ -29,6 +32,7 @@ def read_int(prompt, minimum, maximum):
 
 
 def main():
+    game = QuizGame()
     running = True
 
     while running:
@@ -36,13 +40,13 @@ def main():
         choice = read_int("선택: ", 1, 5)
 
         if choice == 1:
-            print("퀴즈 풀기는 다음 단계에서 구현합니다.")
+            game.play_quizzes(read_int)
         elif choice == 2:
             print("퀴즈 추가는 다음 단계에서 구현합니다.")
         elif choice == 3:
             print("퀴즈 목록은 다음 단계에서 구현합니다.")
         elif choice == 4:
-            print("점수 확인은 다음 단계에서 구현합니다.")
+            print("점수 확인은 다음 작업에서 구현합니다.")
         elif choice == 5:
             print("게임을 종료합니다.")
             running = False

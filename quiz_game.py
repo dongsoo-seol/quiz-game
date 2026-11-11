@@ -98,3 +98,28 @@ class QuizGame:
             return False
 
         return True
+
+    def play_quizzes(self, read_number):
+            if not self.quizzes:
+                print("등록된 퀴즈가 없습니다.")
+                return None
+
+            correct_count = 0
+            total = len(self.quizzes)
+
+            print(f"\n퀴즈를 시작합니다. 총 {total}문제입니다.")
+
+            for number, quiz in enumerate(self.quizzes, start=1):
+                print(f"\n[문제 {number}/{total}]")
+                quiz.display()
+
+                answer = read_number("정답 번호(1~4): ", 1, 4)
+
+                if quiz.check_answer(answer):
+                    print("정답입니다!")
+                    correct_count += 1
+                else:
+                    print(f"오답입니다. 정답은 {quiz.answer}번입니다.")
+
+            print(f"\n결과: {total}문제 중 {correct_count}문제 정답!")
+            return correct_count
