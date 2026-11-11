@@ -62,3 +62,17 @@ quiz-game/
 - 환경 사진 저장 및 내용 확인 완료
 
 ![개발 환경 확인](docs/screenshots/environment.png)
+
+## 2단계 수행 결과
+
+- 메뉴 선택반복종료 구현
+- 공백문자빈 입력범위 밖 번호 처리 검증
+- Ctrl+C와 EOF 안전 종료 검증
+- 기본 메뉴 커밋: 6b2aa48
+- 공통 입력예외 처리 커밋: ec62fc6
+- GitHub에서 수행 문서와 사진 확인 완료
+- 현재 퀴즈 관련 메뉴는 임시 안내이며 실제 기능은 후속 구현
+
+[2단계 수행 기록](docs/02-menu-input.md)
+
+![메뉴와 EOF 안전 종료 검증](docs/screenshots/menu.png)

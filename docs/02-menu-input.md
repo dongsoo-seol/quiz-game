@@ -167,7 +167,7 @@ python -c "import subprocess,sys; r=subprocess.run([sys.executable,'-X','utf8','
 - 기본 메뉴 커밋: 6b2aa48
 - 메시지: Feat: 메뉴 출력과 선택 및 종료 흐름 구현
 - 기본 메뉴 GitHub 업로드 확인
-- 공통 입력·예외 처리 커밋은 다음 작업에서 기록한다.
+- 공통 입력·예외 처리 커밋: ec62fc6
 
 ## 14. 진행 상태
 
@@ -176,8 +176,8 @@ python -c "import subprocess,sys; r=subprocess.run([sys.executable,'-X','utf8','
 - [x] 공백·문자·빈 입력·범위 검증
 - [x] Ctrl+C·EOF 안전 종료 검증
 - [x] 실행 사진 저장·내용 확인
-- [ ] 공통 입력·예외 처리 커밋
-- [ ] 문서·사진 포함 GitHub 업로드
-- [ ] GitHub에서 문서·사진 표시 확인
+- [x] 공통 입력·예외 처리 커밋
+- [x] 문서·사진 포함 GitHub 업로드
+- [x] GitHub에서 문서·사진 표시 확인
 
 게임 기능과 파일 저장은 후속 단계에서 구현한다.
