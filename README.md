@@ -109,3 +109,22 @@ quizzes는 문제 목록이며, best_score는 최고 정답 수입니다. 미플
 [자동 검증 로그](docs/04-storage-test-log.txt)
 
 ![데이터 영속성 검증](docs/screenshots/state-persistence.png)
+
+## 5단계 수행 결과
+
+- feature/quiz-play 브랜치에서 퀴즈 진행과 최고 점수 구현
+- 정답 및 오답, 빈 퀴즈, 점수 갱신과 유지 검증
+- 재실행 후 점수 유지와 Ctrl+C 및 EOF 안전 종료 확인
+- 퀴즈 진행 커밋: e86da9d
+- 최고 점수 커밋: 02f3bcb
+- main 병합 커밋: a1facf8
+- 병합된 main에서 점수 조회와 종료 확인
+- 퀴즈 추가와 목록 메뉴는 다음 단계에서 구현
+
+[5단계 수행 기록](docs/05-play-score-branch.md)
+
+![퀴즈 플레이](docs/screenshots/play.png)
+
+![최고 점수](docs/screenshots/score.png)
+
+![Git 브랜치 병합 그래프](docs/screenshots/git-log.png)
