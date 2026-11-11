@@ -255,8 +255,14 @@ git rev-list --count HEAD
 - [x] 전체 실행 검증 13개 통과
 - [x] 전체 자동 검증 26개 통과·로그 저장
 - [x] 커밋 수 점검
-- [ ] 최종 README 작성
-- [ ] 전체 검증 코드·로그·문서 업로드
-- [ ] GitHub 표시 확인
+- [x] 최종 README 작성
+- [x] 전체 검증 코드·로그·문서 업로드
+- [x] GitHub 표시 확인
+## 15. 업로드 확인
 
+- 검증 코드·로그·문서와 README 커밋: 3c4b5de
+- main 브랜치에 GitHub 업로드 완료
+- GitHub에서 README, test_console.py, 수행 문서, 전체 검증 로그 표시 확인
+- 전체 검증 로그에서 26개 검증 통과와 OK 확인
+- 8단계 clone·pull 실습과 최종 제출은 아직 남아 있음
 8단계의 clone·pull 실습과 최종 제출은 아직 남아 있다.
