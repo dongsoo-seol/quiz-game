@@ -207,3 +207,43 @@ class QuizGame:
             print(f"[{number}] {quiz.question}")
 
         return total
+
+    def show_menu(self):
+        print("\n=== 나의 퀴즈 게임 ===")
+        print("1. 퀴즈 풀기")
+        print("2. 퀴즈 추가")
+        print("3. 퀴즈 목록")
+        print("4. 점수 확인")
+        print("5. 종료")
+
+
+    def run(self, read_number):
+        running = True
+
+        try:
+            while running:
+                self.show_menu()
+                choice = read_number("선택: ", 1, 5)
+
+                if choice == 1:
+                    correct_count = self.play_quizzes(read_number)
+
+                    if correct_count is not None:
+                        self.update_best_score(correct_count)
+
+                elif choice == 2:
+                    self.add_quiz(read_number)
+
+                elif choice == 3:
+                    self.show_quiz_list()
+
+                elif choice == 4:
+                    self.show_best_score()
+
+                elif choice == 5:
+                    print("게임을 종료합니다.")
+                    running = False
+
+        finally:
+            if not self.save_state():
+                print("종료 시 저장하지 못했습니다. 저장 오류를 확인해 주세요.")
