@@ -128,3 +128,22 @@ quizzes는 문제 목록이며, best_score는 최고 정답 수입니다. 미플
 ![최고 점수](docs/screenshots/score.png)
 
 ![Git 브랜치 병합 그래프](docs/screenshots/git-log.png)
+
+## 6단계 수행 결과
+
+- 메뉴 2번: 문제와 선택지 4개, 정답 번호를 입력받아 저장
+- 빈 내용, 공백, 잘못된 정답 입력 처리
+- 추가 후 재실행에서도 문제 6개와 기존 최고 점수 2 유지
+- 퀴즈 추가 자동 검증 6개 통과
+- 메뉴 3번: 전체 문제 목록과 빈 목록 처리
+- 추가 기능 커밋: 28dd48a
+- 목록 기능 커밋: 204c96a
+- 최종 클래스 정리와 통합 검증 및 clone, pull 실습은 후속 진행
+
+[6단계 수행 기록](docs/06-add-list.md)
+
+[퀴즈 추가 자동 검증 로그](docs/06-add-test-log.txt)
+
+![추가 후 재실행 확인](docs/screenshots/add_quiz.png)
+
+![퀴즈 목록](docs/screenshots/list.png)
