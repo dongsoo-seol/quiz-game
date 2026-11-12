@@ -350,8 +350,9 @@ git rev-list --count HEAD
 
 현재까지 init, add, commit, push, checkout, merge를 사용했습니다.
 
-clone과 pull 실습은 8단계에서 수행하고 실제 결과를 추가할 예정입니다.
+clone과 pull 실습을 완료했습니다. 복제 폴더에서 README를 수정하여 커밋·푸시한 뒤, 원래 작업 폴더에서 pull하여 커밋 beaa8ff와 수정 내용이 반영된 것을 확인했습니다.
 
+실습 과정은 [8단계 수행 기록](docs/08-clone-pull.md)에 정리했습니다.
 원격 저장소:
 
 https://github.com/dongsoo-seol/quiz-game
@@ -378,9 +379,9 @@ main
 - [x] 최종 README 내용 작성
 - [x] 7단계 검증 코드·로그·문서 업로드
 - [x] GitHub에서 7단계 자료 표시 확인
-- [ ] 별도 폴더에서 clone 실습
-- [ ] 복제 저장소에서 변경 후 커밋과 푸시
-- [ ] 기존 작업 폴더에서 pull 및 반영 확인
+- [x] 별도 폴더에서 clone 실습
+- [x] 복제 저장소에서 변경 후 커밋과 푸시
+- [x] 기존 작업 폴더에서 pull 및 반영 확인
 - [ ] 최종 제출 자료 확인
 
 남은 작업은 실제 수행 결과를 확인한 뒤 완료로 표시합니다.
