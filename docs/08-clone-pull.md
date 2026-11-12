@@ -158,5 +158,16 @@ Get-Content -Encoding UTF8 .\README.md -Tail 6
 - [x] 원래 폴더에서 pull
 - [x] 최신 커밋과 README 반영 확인
 - [x] README의 8단계 진행 상태 갱신
-- [ ] 8단계 수행 문서 GitHub 업로드
+- [x] 8단계 수행 문서 GitHub 업로드
 - [ ] 최종 제출 자료 확인
+## 11. 업로드와 최종 Git 기록 확인
+
+- 8단계 수행 문서 업로드 커밋: 9796577
+- GitHub에서 README와 8단계 수행 문서 표시 확인 완료
+- 점검 당시 전체 커밋 수: 25개
+- 브랜치: feature/quiz-play
+- main 병합 커밋: a1facf8
+- 원래 작업 폴더와 origin/main의 일치 및 작업 폴더가 깨끗한 상태 확인
+- 최종 Git 그래프 사진 저장 및 내용 확인 완료
+
+![최종 Git 그래프](screenshots/git-log-final.png)
