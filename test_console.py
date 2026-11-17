@@ -96,7 +96,7 @@ class TestConsole(unittest.TestCase):
 
         self.assertIn("기본 퀴즈와 미플레이 상태로 복구합니다.", output)
         data = self.read_state()
-        self.assertEqual(data["quizzes"], self.questions)
+        self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
         self.assertIsNone(data["best_score"])
 
     def test_invalid_state_recovers(self):
@@ -109,7 +109,7 @@ class TestConsole(unittest.TestCase):
 
         self.assertIn("기본 퀴즈와 미플레이 상태로 복구합니다.", output)
         data = self.read_state()
-        self.assertEqual(data["quizzes"], self.questions)
+        self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
         self.assertIsNone(data["best_score"])
 
     def test_menu_input_validation(self):
@@ -251,7 +251,7 @@ class TestConsole(unittest.TestCase):
                     output,
                 )
                 data = self.read_state()
-                self.assertEqual(data["quizzes"], self.questions)
+                self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
                 self.assertEqual(data["best_score"], 2)
 
     def test_keyboard_interrupt_handler(self):
@@ -284,7 +284,7 @@ class TestConsole(unittest.TestCase):
                     output,
                 )
                 data = self.read_state()
-                self.assertEqual(data["quizzes"], self.questions)
+                self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
                 self.assertEqual(data["best_score"], 2)
 
     def test_save_failure_on_exit(self):

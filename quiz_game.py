@@ -43,6 +43,7 @@ class QuizGame:
                     question=item["question"],
                     choices=item["choices"],
                     answer=item["answer"],
+                    hint=item.get("hint", ""),
                 )
                 loaded_quizzes.append(quiz)
 
@@ -70,6 +71,7 @@ class QuizGame:
                     "question": quiz.question,
                     "choices": quiz.choices,
                     "answer": quiz.answer,
+                    "hint": quiz.hint,
                 }
                 for quiz in self.quizzes
             ],
