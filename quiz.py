@@ -1,5 +1,5 @@
 class Quiz:
-    def __init__(self, question, choices, answer):
+    def __init__(self, question, choices, answer, hint=""):
         if not isinstance(question, str) or not question.strip():
             raise ValueError("문제는 비어 있지 않은 문자열이어야 합니다.")
 
@@ -13,9 +13,13 @@ class Quiz:
         if type(answer) is not int or not 1 <= answer <= 4:
             raise ValueError("정답은 1~4 사이의 정수여야 합니다.")
 
+        if not isinstance(hint, str):
+            raise ValueError("힌트는 문자열이어야 합니다.")
+
         self.question = question.strip()
         self.choices = [choice.strip() for choice in choices]
         self.answer = answer
+        self.hint = hint.strip()
 
     def display(self):
         print(self.question)

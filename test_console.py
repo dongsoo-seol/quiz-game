@@ -50,7 +50,16 @@ class TestConsole(unittest.TestCase):
         command = [sys.executable, "-X", "utf8"]
 
         if script is None:
-            command.append(str(self.root / "main.py"))
+            runner = (
+                "import sys,runpy; "
+                f"sys.path.insert(0, {str(self.root)!r}); "
+                "from unittest.mock import patch; "
+                "patch('random.sample', "
+                "side_effect=lambda population, k: list(population)[:k]).start(); "
+                f"runpy.run_path({str(self.root / 'main.py')!r}, "
+                "run_name='__main__')"
+            )
+            command.extend(["-c", runner])
         else:
             command.extend(["-c", script])
 
@@ -79,7 +88,7 @@ class TestConsole(unittest.TestCase):
 
             answers.append(str(answer))
 
-        return "1\n" + "\n".join(answers) + "\n5\n"
+        return f"1\n{len(self.questions)}\n" + "\n".join(answers) + "\n5\n"
 
     def test_first_run_without_file(self):
         output = self.run_program("5\n")
@@ -96,7 +105,7 @@ class TestConsole(unittest.TestCase):
 
         self.assertIn("기본 퀴즈와 미플레이 상태로 복구합니다.", output)
         data = self.read_state()
-        self.assertEqual(data["quizzes"], self.questions)
+        self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
         self.assertIsNone(data["best_score"])
 
     def test_invalid_state_recovers(self):
@@ -109,7 +118,7 @@ class TestConsole(unittest.TestCase):
 
         self.assertIn("기본 퀴즈와 미플레이 상태로 복구합니다.", output)
         data = self.read_state()
-        self.assertEqual(data["quizzes"], self.questions)
+        self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
         self.assertIsNone(data["best_score"])
 
     def test_menu_input_validation(self):
@@ -133,7 +142,7 @@ class TestConsole(unittest.TestCase):
         ]
 
         inputs = (
-            "1\nabc\n\n0\n5\n"
+            f"1\n{len(self.questions)}\nabc\n\n0\n5\n"
             + f" {first_answer} \n"
             + "\n".join(remaining)
             + "\n4\n5\n"
@@ -206,7 +215,7 @@ class TestConsole(unittest.TestCase):
         answers.append("1")
 
         restarted = self.run_program(
-            "1\n" + "\n".join(answers) + "\n4\n5\n"
+            f"1\n{len(answers)}\n" + "\n".join(answers) + "\n4\n5\n"
         )
         total = len(answers)
 
@@ -251,7 +260,7 @@ class TestConsole(unittest.TestCase):
                     output,
                 )
                 data = self.read_state()
-                self.assertEqual(data["quizzes"], self.questions)
+                self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
                 self.assertEqual(data["best_score"], 2)
 
     def test_keyboard_interrupt_handler(self):
@@ -284,7 +293,7 @@ class TestConsole(unittest.TestCase):
                     output,
                 )
                 data = self.read_state()
-                self.assertEqual(data["quizzes"], self.questions)
+                self.assertEqual(data["quizzes"], [dict(question, hint="") for question in self.questions])
                 self.assertEqual(data["best_score"], 2)
 
     def test_save_failure_on_exit(self):
